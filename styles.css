@@ -1,0 +1,473 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jockey+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*header, butões e logotipo Mobile */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  z-index: 10;
+  position: relative;
+  width: 100%;
+}
+
+/* Logotipo */
+.logotipo {
+  width: 8rem;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+}
+
+.menu ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.menu a {
+  margin-right: 1rem;
+}
+
+button {
+  border-radius: 3.125rem;
+  padding: 0.75rem 1.25rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Estilo do botão Entrar */
+.contato {
+  font-size: 1.37rem;
+  border: 2px solid rgba(224, 19, 255, 1);
+  font-weight: bold;
+  border: 2px solid rgba(224, 19, 255, 1);
+  color: #ffffff;
+}
+
+.contato:hover {
+  box-shadow: 0 0 10px 3px rgba(224, 19, 255, 1);
+  text-shadow: 0 0 5px rgba(224, 19, 255, 1), 0 0 10px rgba(224, 19, 255, 1);
+}
+
+/* Estilo do botão Binance */
+.Binance {
+  font-size: 1.37rem;
+  background-color: rgba(224, 19, 255, 0.76);
+  color: white;
+  font-weight: bold;
+}
+
+.Binance:hover {
+  background-color: rgba(224, 19, 255, 1);
+}
+
+.text-purple {
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  margin-top: 3rem;
+}
+
+.text-introduction {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  text-align: justify;
+  padding: 0 1rem;
+  line-height: 1.4;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Quando o hambúrguer está ativo */
+.hamburger.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 5px;
+    z-index: 20;
+    flex-direction: column;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/*vídeo background*/
+
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+/*box texto em tempo real */
+
+.real-time-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  height: 28vh;
+  background-image: linear-gradient(
+    45deg,
+    rgba(128, 0, 128, 0.581),
+    rgba(122, 6, 246, 0.603),
+    rgba(236, 8, 160, 0.504)
+  );
+  background-size: cover;
+}
+
+.real-time-all h1 {
+  font-weight: 400;
+  margin: 0;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  color: #fff;
+}
+/*Dúvidas*/
+
+div h1 {
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: "Montserrat";
+}
+
+/*fduvidas*/
+
+.box-caixas {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 8rem;
+  margin: 8rem auto 0 auto;
+  place-items: center;
+  gap: 20px;
+  max-width: 39.3125rem;
+  align-items: stretch;
+  padding: 0 1.5rem;
+}
+
+.box-caixas article {
+  border: 0.125rem outset #ac08f8;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 1.5625rem;
+  background-color: rgba(77, 69, 69, 0.099);
+  text-align: center;
+  box-shadow: 15px 5px 15px rgba(0, 0, 0, 0.329);
+}
+
+.box-caixas article h3 {
+  font-size: 0.9375rem;
+  margin: 0.5rem;
+}
+
+.box-caixas article p {
+  margin: 0.8rem;
+  font-size: 0.8rem;
+  text-align: justify;
+}
+
+.about-purple {
+  margin-bottom: 10rem;
+  max-width: 100%;
+}
+
+.about-purple h1 {
+  margin-top: 5.1871rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.content-wrapper {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3.75rem;
+}
+
+.content-inner {
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.064);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.typing-effect {
+  font-size: 0.8rem;
+  text-align: justify;
+  margin: 2rem;
+}
+
+.image-container img {
+  display: none;
+}
+.footer-background {
+  background-color: #110815c4;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  color: white;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.footer-content div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-content a {
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  margin-top: 0.3125rem;
+}
+
+.footer-content a:hover {
+  color: #ac08f8;
+}
+
+.footer-logo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: auto;
+}
+/*Sobre a Purple Coin*/
+
+/*MEDIA QUERIES*/
+
+@media (min-width: 600px) {
+  .text-introduction {
+    margin-top: 2.25rem;
+    font-size: 0.95rem;
+  }
+}
+@media (min-width: 1080px) {
+  .text-purple {
+    margin: 1.55rem;
+    font-size: 2rem;
+  }
+  .text-introduction {
+    text-align: justify;
+    font-size: 1.2rem;
+    margin: 1.55rem;
+  }
+}
+
+/*faixa texto*/
+@media (min-width: 600px) {
+  .real-time-all h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.375rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .real-time-all h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+    white-space: nowrap;
+  }
+}
+
+/*box duvidas*/
+
+@media (min-width: 600px) {
+  .box-caixas {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .box-caixas {
+    gap: 25px;
+    margin: 8rem auto 0 auto;
+    max-width: 50rem;
+    justify-content: center;
+  }
+
+  .box-caixas article {
+    height: 15rem;
+    width: 100%;
+  }
+  .box-caixas article p {
+    font-size: 1.0625rem;
+  }
+
+  .box-caixas article h3 {
+    font-size: 1.125rem;
+  }
+}
+/*sobre o token*/
+
+@media (min-width: 600px) {
+  .about-purple {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20rem;
+  }
+
+  .content-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .typing-effect {
+    font-size: 1rem;
+    margin-right: 2rem;
+  }
+
+  .image-container img {
+    display: block;
+    width: 50%;
+    max-width: 15.625rem;
+    margin-right: 1.25rem;
+    border-radius: 3.75rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .typing-effect {
+    margin-right: 2rem;
+    font-size: 1.125rem;
+    flex: 1;
+  }
+
+  .content-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .image-container img {
+    width: 100%;
+    max-width: 22.25rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .footer-content p {
+    font-size: 1.25rem;
+  }
+
+  .footer-content a {
+    font-size: 0.875rem;
+  }
+
+  .footer-logo {
+    width: 8rem;
+  }
+
+  .Binance {
+    font-size: 1rem;
+  }
+
+  .contato {
+    font-size: 1rem;
+  }
+}
