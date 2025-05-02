@@ -1,15 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-  overflow-y: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   overflow-x: hidden;
 }
 
 .elements-form {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex-direction: column;
 }
 
 .inputs {
@@ -47,9 +53,8 @@ input::placeholder {
 }
 
 button {
-  width: 18.5625rem;
+  width: 12rem;
   height: 2.38rem;
-  gap: 0rem;
   opacity: 0rem;
   padding: 0.625rem;
   border: none;
@@ -66,10 +71,12 @@ button:hover {
 
 .voltar {
   display: flex;
+  font-size: 0.8125rem;
   justify-content: center;
   align-items: center;
   width: 100%;
   text-align: center;
+  margin-top: 1.2rem;
 }
 
 a {
@@ -84,21 +91,21 @@ a:hover {
 }
 
 .text1 {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-size: 1.1rem;
   justify-content: center;
 
   & p {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
   }
 }
 
 .background-page2 {
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: -1;
-  margin-top: 40rem;
-  width: auto;
-  z-index: -1;
-  content: "";
-  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
