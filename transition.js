@@ -1,50 +1,57 @@
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".menu");
-
+// Função para verificar o tamanho da tela
 function checkScreenSize() {
   if (window.innerWidth <= 768) {
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
+    // Comportamento mobile
+    hamburger.style.display = "flex"; // Mostra o hamburguer
+    navLinks.style.display = "none"; // Esconde o menu inicialmente
 
-    hamburger.addEventListener("mouseenter", () => {
-      navLinks.classList.add("active");
-    });
+    // Remove event listeners antigos para evitar duplicação
+    hamburger.removeEventListener("click", toggleMenu);
+    document.removeEventListener("click", closeMenuOnClickOutside);
 
-    navLinks.addEventListener("mouseleave", () => {
-      navLinks.classList.remove("active");
-    });
+    // Adiciona os novos event listeners
+    hamburger.addEventListener("click", toggleMenu);
+    document.addEventListener("click", closeMenuOnClickOutside);
+
+    // Remove os listeners de mouse que não são ideais para mobile
+    hamburger.removeEventListener("mouseenter", () =>
+      navLinks.classList.add("active")
+    );
+    navLinks.removeEventListener("mouseleave", () =>
+      navLinks.classList.remove("active")
+    );
   } else {
+    // Comportamento desktop
+    hamburger.style.display = "none";
     navLinks.style.display = "flex";
     navLinks.classList.remove("active");
+    hamburger.classList.remove("active");
+
+    hamburger.removeEventListener("click", toggleMenu);
+    document.removeEventListener("click", closeMenuOnClickOutside);
   }
 }
 
 window.addEventListener("load", checkScreenSize);
 window.addEventListener("resize", checkScreenSize);
 
-const articles = document.querySelectorAll(".box-caixas article");
-let lastScrollTop = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  const articles = document.querySelectorAll(".box-caixas article");
 
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return rect.top < window.innerHeight && rect.bottom >= 0;
-}
+  function checkScroll() {
+    articles.forEach((article) => {
+      const articleTop = article.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
 
-function checkScroll() {
-  const currentScrollTop =
-    window.pageYOffset || document.documentElement.scrollTop;
+      if (articleTop < windowHeight - 100) {
+        article.classList.add("visible");
+      }
+    });
+  }
 
-  articles.forEach((article) => {
-    if (isElementInViewport(article)) {
-      article.classList.add("visible");
-    } else {
-      article.classList.remove("visible");
-    }
-  });
+  // Verifica ao carregar
+  checkScroll();
 
-  lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-}
-
-window.addEventListener("scroll", checkScroll);
-checkScroll();
+  // Verifica ao rolar
+  window.addEventListener("scroll", checkScroll);
+});
