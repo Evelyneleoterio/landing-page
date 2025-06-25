@@ -95,11 +95,9 @@ a:hover {
 
 .background-page2 {
   z-index: -1;
-  margin-top: 40rem;
   width: auto;
   z-index: -1;
-  content: "";
-  position: absolute;
+  position: fixed;
 }
 
 @media screen and (max-width: 768px) {
@@ -124,13 +122,13 @@ a:hover {
 
 @media screen and (max-width: 480px) {
   .inputs {
-    width: 200px;
+    width: 225px;
     padding: 2rem 1.5rem;
     height: 20rem;
   }
 
   button {
-    width: 12rem;
+    width: 225px;
     height: 2rem;
     font-size: 0.8rem;
   }
