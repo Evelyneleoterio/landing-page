@@ -87,10 +87,10 @@ a:hover {
   font-family: "Montserrat";
   font-size: 1.1rem;
   justify-content: center;
+}
 
-  & p {
-    font-family: "Montserrat";
-  }
+.text1 p {
+  font-family: "Montserrat";
 }
 
 .background-page2 {
@@ -100,4 +100,70 @@ a:hover {
   z-index: -1;
   content: "";
   position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+  .inputs {
+    width: 250px;
+    padding: 2.5rem 2.5rem;
+    height: 22rem;
+  }
+
+  button {
+    width: 15rem;
+  }
+
+  .text1 {
+    font-size: 1rem;
+  }
+
+  .background-page2 {
+    margin-top: 30rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .inputs {
+    width: 200px;
+    padding: 2rem 1.5rem;
+    height: 20rem;
+  }
+
+  button {
+    width: 12rem;
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  input {
+    padding: 0.6rem;
+    font-size: 0.55rem;
+  }
+
+  input::placeholder {
+    font-size: 0.55rem;
+  }
+
+  .text1 {
+    font-size: 0.9rem;
+  }
+
+  .text1 p {
+    font-size: 0.8rem;
+  }
+
+  .background-page2 {
+    margin-top: 25rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .inputs {
+    width: 180px;
+    padding: 1.5rem 1rem;
+  }
+
+  button {
+    width: 10rem;
+  }
 }
