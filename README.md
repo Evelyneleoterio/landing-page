@@ -15,11 +15,4 @@ Este projeto foi pensado para compor meu portfólio no GitHub e demonstrar minha
 
 Além disso foi utilizado Mobile Frist e Design Responsivo, Acesse clicando [aqui](https://evelyneleoterio.github.io/landing-page/)
 
-<video controls width="100%">
-  <source src="assets/videos/video1.mp4" type="video/mp4">
-  Seu navegador não suporta vídeos HTML5.
-</video>
-<video controls width="100%">
-  <source src="assets/videos/video2.mp4" type="video/mp4">
-  Seu navegador não suporta vídeos HTML5.
-</video>
+![Video 1 GIF](assets/videos/video1-ezgif.com-video-to-gif-converter.gif)
