@@ -373,6 +373,13 @@ div h1 {
 }
 
 /*faixa texto*/
+
+@media (min-width: 360px) {
+  .real-time-all h1 {
+    font-size: 1.1rem;
+  }
+}
+
 @media (min-width: 600px) {
   .real-time-all h1 {
     display: flex;
